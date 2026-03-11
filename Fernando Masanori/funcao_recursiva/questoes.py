@@ -1,3 +1,4 @@
+
 # Inverte str
 
 def inv(s):
@@ -16,4 +17,35 @@ def mdc(a, b):
 
 print(mdc(5, 10))
 
-# 
+# sd
+def sd(n):
+    if n <= 9: return n
+    return sd(n//10) + n % 10
+
+print(sd(123)) 
+
+# dec2bin
+def dec2bin(n):
+    if n == 0: return ''
+    return dec2bin(n // 2) + str(n % 2)
+
+print(dec2bin(18))
+
+
+# fib
+# dic = {}
+# def fib(n):
+#     if n == 1 or n == 2: return 1
+#     if n not in dic: dic[n] = fib(n - 1) + fib(n - 2)
+#     return dic[n]
+# print(fib(100))
+
+from functools import cache
+
+@cache
+
+def fib(n):
+    if n == 1 or n == 2: return 1
+    return fib(n - 1) + fib(n - 2)
+print(fib(100))
+
